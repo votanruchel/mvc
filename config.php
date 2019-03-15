@@ -2,13 +2,16 @@
 require 'environment.php';
 
 $config = array();
+//Definindo dados padrões das paginas
+define('DEFAULT_PAGE_TITLE','Titulo da página');
+
 
 if(ENVIRONMENT == "development"){
     define("BASE_URL", "http://localhost/estrutura_mvc/");
-    $config['dbname'] = 'estrutura_mvc';
+    $config['dbname'] = 'usuarios';
     $config['host'] = 'localhost';
-    $config['dbuser'] = 'root';
-    $config['dbpass'] = '';
+    $config['dbuser'] = 'admin';
+    $config['dbpass'] = 'admin';
 }else{
     define("BASE_URL", "https://votan.dev/estrutura_mvc/");
     $config['dbname'] = 'estrutura_mvc';
