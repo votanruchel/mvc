@@ -1,6 +1,6 @@
-<?php 
-
-class model{
+<?php
+namespace Core;
+class Model{
 
     protected $db;
 

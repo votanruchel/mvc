@@ -1,5 +1,5 @@
 <?php
-
+namespace Core;
 class Core{
     public function run(){
 
@@ -40,16 +40,19 @@ class Core{
 
         }else{
             //Caso contrario adicona ao $currentController o valor de (homeController) como padrao e ao $currentAction (index) como padrao
-            $currentController = 'homeController';
+            $currentController = 'HomeController';
             $currentAction = 'index';
         }
+        $currentController = ucfirst($currentController);
+        $prefix = "\Controllers\\";
             //Verifica se o controller passado na URL realmente existe e tambem se o metodo passado existe
-            if (!file_exists('controllers/'.$currentController.'.php') || !method_exists($currentController, $currentAction)) {
+            if (!file_exists('Controllers/'.$currentController.'.php') || !method_exists($prefix.$currentController, $currentAction)) {
               //caso nao existe retorna o usuario para o controller notfoundController e imprime uma mensagem de pagina nao encontrada
-              $currentController = 'notfoundController';
+              $currentController = 'NotfoundController';
               $currentAction = 'index';
             }
             //cria um objeto para o controller
+            $currentController = $prefix.$currentController;
             $c = new $currentController();
             //  \/ PESQUISAR A FUNCIONALIDADE
             call_user_func_array(array($c,$currentAction), $params);

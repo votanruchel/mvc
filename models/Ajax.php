@@ -1,6 +1,8 @@
 <?php
-class Ajax extends model{
-  
+namespace Models;
+use \Core\Model;
+class Ajax extends Model{
+
 }
 
  ?>
