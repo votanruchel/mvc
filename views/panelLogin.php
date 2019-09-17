@@ -27,6 +27,9 @@
     <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL . 'assets/login-panel/'; ?>css/util.css">
     <link rel="stylesheet" type="text/css" href="<?php echo BASE_URL . 'assets/login-panel/'; ?>css/main.css">
     <!--===============================================================================================-->
+    <script>
+        const BASE_URL = '<?php echo BASE_URL; ?>';
+    </script>
 </head>
 
 <body>
@@ -40,7 +43,7 @@
                     </span>
                 </div>
 
-                <form class="login100-form validate-form">
+                <form class="login100-form validate-form" method="POST">
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
                         <span class="label-input100">Username</span>
                         <input class="input100" type="text" name="username" placeholder="Enter username">
@@ -49,7 +52,7 @@
 
                     <div class="wrap-input100 validate-input m-b-18" data-validate="Password is required">
                         <span class="label-input100">Password</span>
-                        <input class="input100" type="password" name="pass" placeholder="Enter password">
+                        <input class="input100" type="password" name="password" placeholder="Enter password">
                         <span class="focus-input100"></span>
                     </div>
 
@@ -69,9 +72,9 @@
                     </div>
 
                     <div class="container-login100-form-btn">
-                        <button class="login100-form-btn">
-                            Login
-                        </button>
+                        <input type="submit" class="login100-form-btn" value="Login">
+
+
                     </div>
                 </form>
             </div>
@@ -80,6 +83,8 @@
 
     <!--===============================================================================================-->
     <script src="<?php echo BASE_URL . 'assets/login-panel/'; ?>vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="<?php echo BASE_URL . 'assets/'; ?>js/ajaxRequest.js"></script>
     <!--===============================================================================================-->
     <script src="<?php echo BASE_URL . 'assets/login-panel/'; ?>vendor/animsition/js/animsition.min.js"></script>
     <!--===============================================================================================-->

@@ -5,8 +5,4 @@ class HomeController extends Controller{
     public function index(){
         $this->loadTemplate('home',$dados = array());
     }
-
-    public function teste(){
-        echo "this is test";
-    }
 }
