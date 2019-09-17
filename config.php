@@ -7,11 +7,11 @@ define('DEFAULT_PAGE_TITLE','Titulo da página');
 
 
 if(ENVIRONMENT == "development"){
-    define("BASE_URL", "http://localhost:8888/mvc/");
-    $config['dbname'] = 'portifolio';
+    define("BASE_URL", "http://localhost/mvc/");
+    $config['dbname'] = 'mvc';
     $config['host'] = 'localhost';
     $config['dbuser'] = 'root';
-    $config['dbpass'] = 'root';
+    $config['dbpass'] = '';
 }else{
     define("BASE_URL", "https://votan.dev/mvc/");
     $config['dbname'] = 'estrutura_mvc';

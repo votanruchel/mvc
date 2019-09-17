@@ -1,5 +1,5 @@
 <?php
-class ajaxController extends controller
+class AjaxController extends controller
 {
 
   public static function index(){
