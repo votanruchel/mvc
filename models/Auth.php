@@ -5,7 +5,13 @@ use \Core\Model;
 class Auth extends Model{
     private $attempts = 0;
     //private $ip;
-
+    
+    public function __construct()
+    {
+        parent::__construct();
+        $this->ip = $_SERVER['REMOTE_ADDR'];
+        $this->verifyAttempts();
+    }
     public function passwordHashCreator($string){
         $passwordHash = password_hash($string, PASSWORD_DEFAULT);
         return $passwordHash;
